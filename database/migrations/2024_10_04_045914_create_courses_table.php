@@ -7,19 +7,19 @@ use Illuminate\Support\Facades\Schema;
 class CreateCoursesTable extends Migration
 {
     public function up()
-{
-    Schema::create('courses', function (Blueprint $table) {
-        $table->id();
-        $table->string('course_name');
-        $table->string('teacher');
-        $table->string('description');
-        $table->timestamps();
-    });
-}
+    {
+        Schema::create('courses', function (Blueprint $table) {
+            $table->id(); // Auto-incrementing ID for the course
+            $table->string('course_name'); // Course name
+            $table->string('teacher'); // Teacher assigned to the course
+            $table->string('description'); // Description of the course
+
+            $table->timestamps(); // Created at and updated at timestamps
+        });
+    }
 
     public function down()
     {
-        Schema::dropIfExists('courses');
+        Schema::dropIfExists('courses'); // Drop the courses table if it exists
     }
 }
-

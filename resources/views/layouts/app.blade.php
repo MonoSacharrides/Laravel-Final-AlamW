@@ -5,18 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Course Feedback System</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
-    <style>
-        body {
-            background-color: #a8c7f5;
-        }
-        .content {
-            padding: 20px;
-        }
-    </style>
+
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-primary">
-        <a class="navbar-brand text-light" href="/">Course Feedback</a>
+    <nav class="navbar navbar-expand-lg navbar-light bg-primary p-2">
+        <a href="{{ route('home') }}" class="home navbar-brand text-light fs-4">Home</a>
+        <a class="navbar-brand text-light fs-4" href="{{ route('courses') }}">Course Feedback</a>
     </nav>
     <div class="content ">
         @yield('content')

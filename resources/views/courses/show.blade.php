@@ -2,9 +2,15 @@
 
 @section('content')
 <div class="container">
+    <div class="container-back">
+    <div class="feedback">
     <h1>{{ $course->course_name  }} - Feedback</h1>
     <p>Instructor: {{ $course->teacher}}</p>
-
+    </div>
+    <div class="text-center mt-2 mb-4 back-btn">
+        <a href="javascript:history.back()" class="btn p-2.5 bg-primary text-white backbtn">Back</a>
+    </div>
+    </div>
     @if(session('message'))
         <div class="alert alert-success">{{ session('message') }}</div>
     @endif
@@ -38,3 +44,11 @@
     @endforeach
 </div>
 @endsection
+
+<style>
+    .container-back{
+        display: flex;
+        justify-content: space-between;
+        margin-top: 10px;
+    }
+</style>
