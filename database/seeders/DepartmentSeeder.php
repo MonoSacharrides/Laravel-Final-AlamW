@@ -13,7 +13,7 @@ class DepartmentSeeder extends Seeder
         $departments = [
             ['name' => 'CAST', 'code' => 'CAST', 'description' => 'College of Arts and Sciences Technology'],
             ['name' => 'CON', 'code' => 'CON', 'description' => 'College of Nursing'],
-            ['name' => 'COE', 'code' => 'COE', 'description' => 'College of Engineering'],
+            ['name' => 'COE', 'code' => 'COE', 'description' => 'College of Education'],
             ['name' => 'CABM', 'code' => 'CABM', 'description' => 'College of Accountancy and Business Management'],
             ['name' => 'CABM-H', 'code' => 'CABM-H', 'description' => 'College of Accountancy and Business Management - Hospitality'],
             ['name' => 'CRIM', 'code' => 'CRIM', 'description' => 'College of Criminal Justice'],
