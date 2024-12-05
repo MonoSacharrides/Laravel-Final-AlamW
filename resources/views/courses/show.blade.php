@@ -55,9 +55,9 @@
 
                 <!-- Edit and Delete Buttons -->
                 <div class="mt-2 mt-sm-0">
-                    <button type="button" class="btn btn-warning btn-sm" data-toggle="collapse" data-target="#editFeedback{{ $feedback->id }}">
+                    <a href="{{ route('feedback.edit', $feedback->id) }}" class="btn btn-warning btn-sm">
                         Edit
-                    </button>
+                    </a>
 
                     <form action="/feedback/{{ $feedback->id }}" method="POST" class="d-inline" onsubmit="return confirm('Are you sure you want to delete this feedback?');">
                         @csrf

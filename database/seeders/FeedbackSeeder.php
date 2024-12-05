@@ -15,14 +15,14 @@ class FeedbackSeeder extends Seeder
         foreach ($courses as $course) {
             Feedback::create([
                 'course_id' => $course->id,
-                'student_name' => 'wilson',
+
                 'comments' => 'Great course! Learned a lot.',
                 'rating' => 5,
             ]);
 
             Feedback::create([
                 'course_id' => $course->id,
-                'student_name' => 'joana',
+
                 'comments' => 'The instructor was very helpful.',
                 'rating' => 4,
             ]);
