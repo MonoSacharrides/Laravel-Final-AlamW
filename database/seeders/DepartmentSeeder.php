@@ -3,7 +3,6 @@
 namespace Database\Seeders;
 
 use App\Models\Department;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
 class DepartmentSeeder extends Seeder
@@ -21,7 +20,7 @@ class DepartmentSeeder extends Seeder
         ];
 
         foreach ($departments as $department) {
-            Department::create($department);
+            Department::firstOrCreate(['code' => $department['code']], $department);
         }
     }
 }

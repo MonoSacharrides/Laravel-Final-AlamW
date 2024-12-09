@@ -9,22 +9,28 @@ use Illuminate\Http\Request;
 class FeedbackController extends Controller
 {
     public function store(Request $request, Course $course)
-    {
-        $validated = $request->validate([
-            'rating' => 'required|integer|min:1|max:5',
-            'feedback' => 'required|string|max:1000',
-            'anonymous' => 'boolean',
-        ]);
+{
+    $validated = $request->validate([
+        'rating' => 'required|integer|min:1|max:5',
+        'feedback' => 'required|string|max:1000',
+        'anonymous' => 'boolean',
+        'comments' => 'nullable|string|max:1000',
+    ]);
 
-        Feedback::create([
-            'course_id' => $course->id,
-            'rating' => $validated['rating'],
-            'feedback' => $validated['feedback'],
-            'anonymous' => $request->has('anonymous'),
-        ]);
+    Feedback::create([
+        'course_id' => $course->id,
+        'rating' => $validated['rating'],
+        'feedback' => $validated['feedback'],
+        'anonymous' => $request->has('anonymous'),
+        'comments' => $request->input('comments', ''),
+    ]);
 
-        return redirect()->route('show.feedback', ['course' => $course->id])->with('message', 'Feedback submitted successfully!');
-    }
+    return redirect()->route('show.feedback', ['course' => $course->id])
+        ->with('message', 'Feedback submitted successfully!');
+}
+
+
+
 
     public function index(Course $course)
     {

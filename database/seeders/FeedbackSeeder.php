@@ -3,8 +3,8 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
-use App\Models\Feedback;
 use App\Models\Course;
+use App\Models\Feedback;
 
 class FeedbackSeeder extends Seeder
 {
@@ -13,18 +13,8 @@ class FeedbackSeeder extends Seeder
         $courses = Course::all();
 
         foreach ($courses as $course) {
-            Feedback::create([
+            Feedback::factory()->create([
                 'course_id' => $course->id,
-
-                'comments' => 'Great course! Learned a lot.',
-                'rating' => 5,
-            ]);
-
-            Feedback::create([
-                'course_id' => $course->id,
-
-                'comments' => 'The instructor was very helpful.',
-                'rating' => 4,
             ]);
         }
     }
